@@ -16,15 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 6f3a6924f0d0e924e8e637fedb28edc2
-  m_SerializeEntries:
-  - m_GUID: 1607bf4419f07264395f2b48038484f7
-    m_Address: Sword
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 4fc869c905915874bbea3d0a69882118
-    m_Address: TrashCan
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7f481fdfa408f0b47bcbd3df0cd8b985, type: 2}
   m_SchemaSet:
