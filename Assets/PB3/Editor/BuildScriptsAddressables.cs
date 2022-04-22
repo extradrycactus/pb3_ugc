@@ -12,22 +12,30 @@ public class BuildScriptsAddressables
 {
     [MenuItem("Tools/PB3 - Build Addressables")]
     public static void BuildAll()
-    {
-        if (EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneWindows64) {
-            BuildAddressables();
-            SetPlatformMacOS();
-            BuildAddressables();
-            SetPlatformWindows();
-        } else if (EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneOSX) {
-            BuildAddressables();
-            SetPlatformWindows();
-            BuildAddressables();
-            SetPlatformMacOS();
+    {        
+        string lastModDirPath = UnityEditor.EditorPrefs.GetString("pb3_ugc_lastBuildPath");
+        if (string.IsNullOrEmpty(lastModDirPath)) {
+            lastModDirPath = Application.persistentDataPath;
+        } else if (!Directory.Exists(lastModDirPath)) {
+            lastModDirPath = Application.persistentDataPath;
         }
         DirectoryInfo dir = new DirectoryInfo(UnityEngine.AddressableAssets.Addressables.RuntimePath);
-        string modDirPath = EditorUtility.OpenFolderPanel("Select Mod Directory", Application.dataPath, "");
-        if (!string.IsNullOrEmpty(modDirPath)) {
+        string modDirPath = EditorUtility.OpenFolderPanel("Select Mod Directory", lastModDirPath, "");
+        if (!string.IsNullOrEmpty(modDirPath)) {   
+            if (EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneWindows64) {
+                BuildAddressables();
+                SetPlatformMacOS();
+                BuildAddressables();
+                SetPlatformWindows();
+            } else if (EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneOSX) {
+                BuildAddressables();
+                SetPlatformWindows();
+                BuildAddressables();
+                SetPlatformMacOS();
+            }
             CopyDirectory(dir.Parent.FullName, Path.Combine(modDirPath, "aa"), true);
+            UnityEditor.EditorPrefs.SetString("pb3_ugc_lastBuildPath", modDirPath);
+            EditorUtility.RevealInFinder(modDirPath);
         }
     }
  
