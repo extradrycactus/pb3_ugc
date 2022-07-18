@@ -4,9 +4,9 @@ Shader "URP/CrossSection_2Planes"
     {
         [NoScaleOffset]Texture2D_749cf82b63f148329502ab7811174366("Albedo", 2D) = "white" {}
         Color_4937b32baf6848678c32e85a81b0ba8e("AlbedoColor", Color) = (1, 1, 1, 0)
-        Vector3_Plane1_Position("Plane1_Position", Vector) = (0, 0.2, 0, 0)
+        Vector3_Plane1_Position("Plane1_Position", Vector) = (0, 10, 0, 0)
         Vector3_Plane1_Normal("Plane1_Norrmal", Vector) = (0, 1, 0, 0)
-        Vector3_Plane2_Position("Plane2_Position", Vector) = (0, -0.3, 0, 0)
+        Vector3_Plane2_Position("Plane2_Position", Vector) = (0, -10, 0, 0)
         Vector3_Plane2_Normal("Plane2_Normal", Vector) = (0, -1, 0, 0)
         Color_27a03e4caca545619b0c0ce31fdd17b8("CapColor", Color) = (0.5019608, 0.5019608, 0.5019608, 1)
         [HideInInspector][NoScaleOffset]unity_Lightmaps("unity_Lightmaps", 2DArray) = "" {}
