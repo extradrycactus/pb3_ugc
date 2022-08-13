@@ -25,6 +25,7 @@ public class ZedAxisVehicle : MonoBehaviour
 	[Header("Do Not Edit")]
     public CuttingController_TwoPlanes [] m_CuttingPlaneControllers;
     public MeshRenderer m_MeshRenderer;
+    public Transform m_ScalingTransform;
     public MeshRenderer m_OutlineMeshRenderer;
     public MeshFilter m_OutlineMeshFilter;
 	public GameObject m_PhysicsPrefab;
