@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PolyPhysics
+namespace Poly.Physics
 {
     [RequireComponent(typeof(Rigidbody))]
     public class WheelJoint : Joint

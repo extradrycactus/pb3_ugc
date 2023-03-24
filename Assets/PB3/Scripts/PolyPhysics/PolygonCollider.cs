@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PolyPhysics.Unity
+namespace Poly.Collide.Unity
 {
     public class PolygonCollider : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using Common.Determinism;
 
-namespace PolyPhysics
+namespace Poly.Physics
 {
     public class WorldObject : OrderedBehaviour
     {

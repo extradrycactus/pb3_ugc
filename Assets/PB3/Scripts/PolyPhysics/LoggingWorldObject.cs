@@ -1,4 +1,4 @@
-﻿namespace PolyPhysics
+﻿namespace Poly.Physics
 {
     public class LoggingWorldObject : WorldObject
     {

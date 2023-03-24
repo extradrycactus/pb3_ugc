@@ -2,7 +2,7 @@
 using UnityEngine;
 
 #pragma warning disable 0414
-namespace PolyPhysics
+namespace Poly.Physics
 {
     [SelectionBase]
     public class Vehicle : Action

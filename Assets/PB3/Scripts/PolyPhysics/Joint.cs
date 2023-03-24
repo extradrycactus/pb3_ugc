@@ -1,7 +1,7 @@
 ﻿using Poly;
 using UnityEngine;
 
-namespace PolyPhysics
+namespace Poly.Physics
 {
     public abstract class Joint : LoggingWorldObject
     {
