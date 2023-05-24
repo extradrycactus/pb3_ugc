@@ -32,6 +32,9 @@ public class BuildScriptsAddressables
                 SetPlatformWindows();
                 BuildAddressables();
                 SetPlatformMacOS();
+            } else {
+                EditorUtility.DisplayDialog("ERROR", "Build target must be set to Windows64 or OSX!\nCurrent build target is " + EditorUserBuildSettings.selectedStandaloneTarget.ToString(), "OK");
+                return;
             }
             CopyDirectory(dir.Parent.FullName, Path.Combine(modDirPath, "aa"), true);
             UnityEditor.EditorPrefs.SetString("pb3_ugc_lastBuildPath", modDirPath);
