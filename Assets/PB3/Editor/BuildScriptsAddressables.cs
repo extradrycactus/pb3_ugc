@@ -26,14 +26,25 @@ public class BuildScriptsAddressables
                 BuildAddressables();
                 SetPlatformMacOS();
                 BuildAddressables();
+                SetPlatformLinux();
+                BuildAddressables();
                 SetPlatformWindows();
             } else if (EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneOSX) {
                 BuildAddressables();
                 SetPlatformWindows();
                 BuildAddressables();
+                SetPlatformLinux();
+                BuildAddressables();
                 SetPlatformMacOS();
+            } else if (EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneLinux64) {
+                BuildAddressables();
+                SetPlatformWindows();
+                BuildAddressables();
+                SetPlatformMacOS();
+                BuildAddressables();
+                SetPlatformLinux();
             } else {
-                EditorUtility.DisplayDialog("ERROR", "Build target must be set to Windows64 or OSX!\nCurrent build target is " + EditorUserBuildSettings.selectedStandaloneTarget.ToString(), "OK");
+                EditorUtility.DisplayDialog("ERROR", "Build target must be set to Windows64, Linux64, or OSX!\nCurrent build target is " + EditorUserBuildSettings.selectedStandaloneTarget.ToString(), "OK");
                 return;
             }
             CopyDirectory(dir.Parent.FullName, Path.Combine(modDirPath, "aa"), true);
@@ -52,6 +63,12 @@ public class BuildScriptsAddressables
     {
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX);
         EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.StandaloneOSX;
+    }
+ 
+    public static void SetPlatformLinux()
+    {
+        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinux64);
+        EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.StandaloneLinux64;
     }
  
     public static void BuildAddressables(object o = null)
